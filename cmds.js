@@ -123,7 +123,7 @@ exports.playCmd = rl => {
 			
 			let idPregunta = getRandom();
 			log(`${idPregunta}`);
-			idPregunta = idPregunta * model.count();
+			idPregunta = idPregunta * (toBeAsked.length - 1);
 			log(`${idPregunta}`);
 			idPregunta = Math.round(idPregunta);
 			log(`${idPregunta}`);
@@ -152,6 +152,8 @@ exports.playCmd = rl => {
 					biglog('Incorrecta', 'red');
 					log("Incorrecto");
 					log(` Acertadas: ${colorize(score, 'magenta')}`)
+					log(`${colorize(' ¡Fin del juego!', 'red')}`);
+
 					rl.prompt();
 				}
 			})
